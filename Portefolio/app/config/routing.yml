@@ -1,0 +1,4 @@
+emilien_platform:
+    resource: "@EmilienPlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+

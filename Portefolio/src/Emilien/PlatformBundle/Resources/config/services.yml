@@ -1,0 +1,16 @@
+#services:
+#    emilien_platform.example:
+#        class: Emilien\PlatformBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+services:
+    Emilienplatform.antispam:
+        class: Emilien\PlatformBundle\Antispam\EmilienAntispam
+        arguments: [@mailer, %locale%, 50]
+
+services:
+    oc_platform.doctrine.notification:
+        class: Emilien\PlatformBundle\DoctrineListener\ApplicationNotification
+        arguments: [@mailer]
+        tags:
+            - { name: doctrine.event_listener, event: postPersist }
